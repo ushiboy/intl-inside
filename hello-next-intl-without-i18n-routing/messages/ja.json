@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "title": "こんにちは！こんにちは！",
+    "to2ndPage": "次のページは<link>こちら</link>"
+  },
+  "SecondPage": {
+    "title": "こんにちは！{name}！",
+    "backToHome": "ホームへ戻る"
+  }
+}

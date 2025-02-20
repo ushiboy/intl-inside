@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "to2ndPage": "Click <link>here</link> for the next page"
+  },
+  "SecondPage": {
+    "title": "Hello {name}!",
+    "backToHome": "Back to Home"
+  }
+}
