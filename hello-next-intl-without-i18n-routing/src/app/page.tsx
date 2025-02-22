@@ -15,6 +15,11 @@ export default function Home() {
             link: (c) => <Link href="/2nd">{c}</Link>,
           })}
         </li>
+        <li>
+          {t.rich("toClientPage", {
+            link: (c) => <Link href="/client">{c}</Link>,
+          })}
+        </li>
       </ul>
     </main>
   );
