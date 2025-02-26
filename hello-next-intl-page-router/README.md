@@ -1,0 +1,18 @@
+hello-next-intl
+=====
+
+Page Router setup with i18n routing
+
+## Getting Started
+
+```bash
+pnpm install
+```
+
+```bash
+pnpm dev
+```
+
+## Reference
+
+- https://next-intl.dev/docs/getting-started/pages-router
