@@ -2,7 +2,7 @@
 
 ## インストール
 
-pnpmの場合
+pnpm の場合
 
 ```
 pnpm add next-intl
@@ -10,7 +10,7 @@ pnpm add next-intl
 
 ## 基本的な環境設定
 
-### Next.jsの設定
+### Next.js の設定
 
 リクエストに対して国際化設定を適用するプラグインを Next.js の設定に適用する。
 
@@ -112,17 +112,37 @@ export default function Home() {
 
 ## ロケールの決定方法
 
-### 方法1:パスの先頭で決定する
+### 方法 1: next-intl のミドルウェアを利用する
 
-`https://example.com/ja/path/to/page`のように、パスの先頭でロケールが決まるパターン。
-next-intl公式に方法が書かれているのでそちらを参照。
+ミドルウェアの設定で次の i18n ルーティングに対応できる。
+
+- パスのプレフィックスにロケールを含むルーティング
+  - 例: `https://example.com/ja/path/to/page`
+- サブドメインにロケールを含むルーティング
+  - 例: `https://ja.example.com/path/to/page`
+- 上記の他 Cookie や Accept-Language ヘッダーでロケールを検出するオプションも提供されている
+
+この場合、ミドルウェアの仕様として App Router のルーティング階層でトップレベルを`[locale]`とする（`src/app/[locale]/path/to/page.tsx`）必要がある。
+
+next-intl 公式に方法が書かれているのでそちらを参照。
 
 see: https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing
 
-### 方法2:Cookieから取得して決定する
+### 方法 2: next-intl のミドルウェアを利用しない
 
-T.B.D
+例えばユーザー設定からロケール取得するなどの場合、`getRequestConfig`に渡す引数の関数内でロケールの判断を行う。
+こちらの場合、App Router のルーティング階層に特に制約はない。
+（Cookie や Accept-Language ヘッダーからの取得も実装すればできる）
 
-### 方法3:Accept-Languageヘッダーから決定する
+```typescript:src/i18n/request.ts
+import { getRequestConfig } from "next-intl/server";
 
-T.B.D
+export default getRequestConfig(async () => {
+  const locale = (await 何らかのユーザーロケール取得処理() || "ja";
+
+  return {
+    locale,
+    messages: (await import(`./locales/${locale}.json`)).default,
+  };
+});
+```

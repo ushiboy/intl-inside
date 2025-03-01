@@ -2,6 +2,15 @@
   "HomePage": {
     "title": "Hello world!"
   },
+  "SecondPage": {
+    "title": "Hello {name}!",
+    "backToHome": "Back to Home"
+  },
+  "ClientPage": {
+    "title": "Client Page",
+    "count": "count: {count, plural, =0 {none} =1 {one} other {#}}",
+    "backToHome": "Back to Home"
+  },
   "Footer": {
     "change": "Change locale: {from} to <link>{to}</link>"
   }

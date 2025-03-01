@@ -2,12 +2,12 @@
 
 import { cookies } from "next/headers";
 
-const COOKIE_NAME = "user-locale";
-
-export async function getUserLocale() {
-  return (await cookies()).get(COOKIE_NAME)?.value;
-}
+const COOKIE_NAME = "NEXT_LOCALE";
 
 export async function setUserLocale(locale: string) {
   (await cookies()).set(COOKIE_NAME, locale);
+}
+
+export async function getUserLocale() {
+  return (await cookies()).get(COOKIE_NAME)?.value;
 }
