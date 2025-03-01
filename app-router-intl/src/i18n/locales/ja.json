@@ -1,5 +1,8 @@
 {
   "HomePage": {
     "title": "こんにちは！こんにちは！"
+  },
+  "Footer": {
+    "change": "言語を変更: {from} から <link>{to}</link>"
   }
 }

@@ -1,5 +1,8 @@
 {
   "HomePage": {
     "title": "Hello world!"
+  },
+  "Footer": {
+    "change": "Change locale: {from} to <link>{to}</link>"
   }
 }

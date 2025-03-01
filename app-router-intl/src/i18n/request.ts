@@ -1,9 +1,8 @@
 import { getRequestConfig } from "next-intl/server";
+import { getUserLocale } from "@/services/locale";
 
 export default getRequestConfig(async () => {
-  const locale = "ja";
-
-  console.log("pass request");
+  const locale = (await getUserLocale()) || "ja";
 
   return {
     locale,

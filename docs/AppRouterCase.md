@@ -109,3 +109,20 @@ export default function Home() {
   );
 }
 ```
+
+## ロケールの決定方法
+
+### 方法1:パスの先頭で決定する
+
+`https://example.com/ja/path/to/page`のように、パスの先頭でロケールが決まるパターン。
+next-intl公式に方法が書かれているのでそちらを参照。
+
+see: https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing
+
+### 方法2:Cookieから取得して決定する
+
+T.B.D
+
+### 方法3:Accept-Languageヘッダーから決定する
+
+T.B.D
