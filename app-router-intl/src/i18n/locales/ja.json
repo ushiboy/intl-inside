@@ -1,0 +1,17 @@
+{
+  "HomePage": {
+    "title": "こんにちは！こんにちは！"
+  },
+  "SecondPage": {
+    "title": "こんにちは！{name}！",
+    "backToHome": "ホームへ戻る"
+  },
+  "ClientPage": {
+    "title": "クライアントページ",
+    "count": "count: {count, plural, =0 {なし} =1 {1つ} other {#}}",
+    "backToHome": "ホームへ戻る"
+  },
+  "Footer": {
+    "change": "言語を変更: {from} から <link>{to}</link>"
+  }
+}
