@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin({
+  experimental: {
+    createMessagesDeclaration: "./src/i18n/locales/en.json",
+  },
+});
 
 export default withNextIntl(nextConfig);
